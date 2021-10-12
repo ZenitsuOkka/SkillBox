@@ -24,12 +24,16 @@ distances['Moscow'] = {}
 distances['Moscow']['London'] = moscow_london
 distances['Moscow']['Paris'] = moscow_paris
 
-
 london_paris = ((london[0] - paris[0])**2 + (london[1] - paris[1])**2) ** .5
 
 distances['London'] = {}
 distances['London']['Paris'] = london_paris
 distances['London']['Moscow'] = moscow_london
+
+distances['Paris'] = {}
+distances['Paris']['London'] = london_paris
+distances['Paris']['Moscow'] = moscow_london
+
 
 print(distances)
 
