@@ -17,7 +17,7 @@ meadow_set = set(meadow)
 print(garden_set.union(meadow_set)) # .union выводит тлоько уникальные значения из набора set
 
 # выведите на консоль те, которые растут и там и там
-
+print(garden_set & meadow_set)
 
 # выведите на консоль те, которые растут в саду, но не растут на лугу
 # TODO здесь ваш код
