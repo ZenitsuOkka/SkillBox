@@ -17,12 +17,12 @@ meadow_set = set(meadow)
 print(garden_set.union(meadow_set)) # .union выводит тлоько уникальные значения из набора set
 
 # выведите на консоль те, которые растут и там и там
-print(garden_set & meadow_set)
+print(garden_set & meadow_set) # & выводит общее из двух сетов
 
 # выведите на консоль те, которые растут в саду, но не растут на лугу
-# TODO здесь ваш код
+print(garden_set.difference(meadow_set)) # difference только то что отличается одного сета от другого
 
 # выведите на консоль те, которые растут на лугу, но не растут в саду
-# TODO здесь ваш код
 
+print(meadow_set.difference(garden_set))
 
