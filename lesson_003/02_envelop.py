@@ -16,13 +16,13 @@ paper_x, paper_y = 6, 8
 # paper_x, paper_y = 6, 8 da
 # paper_x, paper_y = 8, 6 da
 # paper_x, paper_y = 3, 4 da
-# paper_x, paper_y = 11, 9 da
+# paper_x, paper_y = 11, 9 net
 # paper_x, paper_y = 9, 11 net
 # (просто раскоментировать нужную строку и проверить свой код)
 
 
-envelop_x, envelop_y = 10, 7
-paper_x, paper_y = 11, 9
+envelop_x, envelop_y = 9, 11
+paper_x, paper_y = 11, 11
 
 if envelop_x >= paper_x: # сравниваем сторону конверта х с стороной листа х
     if envelop_y >= paper_y: #сравниваем сторону конверта у с стороной листа у
@@ -77,4 +77,14 @@ else:# сравниваем в обратном порядке
 # brick_x, brick_y, brick_z = 3, 11, 6
 # (просто раскоментировать нужную строку и проверить свой код)
 
-# TODO здесь ваш код
+hole_x, hole_y = 8, 9
+brick_x, brick_y, brick_z = 5, 6, 3
+
+if (hole_x >= brick_x <= hole_y) and (hole_x >= brick_y <= hole_y):
+    print('Yes')
+elif (hole_x >= brick_y <= hole_y) and (hole_x >= brick_z <= hole_y):
+    print('Yes')
+elif (hole_x >= brick_x <= hole_y) and (hole_x >= brick_z <= hole_y):
+    print('Yes')
+else:
+    print('Not')
