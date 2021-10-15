@@ -75,19 +75,19 @@ my_list= [2,3 ,4,   5,6,]
 
 # reformat кода
 
-x,y = 3,8
+x, y = 3, 8
 
-if x==3    :
-    print   (42)
+if x == 3:
+    print(42)
 
-if x<0 :
-    if   y > 0:
-        print( 'налево!')
+if x < 0:
+    if y > 0:
+        print('налево!')
     else:
-        print(                    'направо!')
-else       :
+        print('направо!')
+else:
     print(
-      'стой!')
+        'стой!')
 
 
 # названия переменных
