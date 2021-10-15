@@ -31,7 +31,10 @@ if envelop_x >= paper_x: # сравниваем сторону конверта 
         if paper_y <= envelop_x:
             if paper_x <= envelop_y:
                 print('Yes!')
-
+            else:
+                print('Not')
+        else:
+            print('Not')
 
 
 
