@@ -27,6 +27,10 @@ paper_x, paper_y = 8, 9
 if envelop_x >= paper_x: # сравниваем сторону конверта х с стороной листа х
     if envelop_y >= paper_y: #сравниваем сторону конверта у с стороной листа у
         print('Yes!')
+    else:
+        if paper_y <= envelop_x:
+            if paper_x <= envelop_y:
+                print('Yes!')
 
 
 
