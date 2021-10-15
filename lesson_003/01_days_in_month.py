@@ -24,4 +24,12 @@ month_day_count = {
     '12': 31,
     }
 
+user_input = input("Введите, пожалуйста, номер месяца: ")
+if user_input.isdigit():
+    month = int(user_input)
+
+    if 1 <= month <= 12:
+        day_count = month_day_count[user_input]
+        print('Вы ввели', month)
+        print('Кол-во дней в месяце:', day_count)
 
