@@ -32,4 +32,6 @@ if user_input.isdigit():
         day_count = month_day_count[user_input]
         print('Вы ввели', month)
         print('Кол-во дней в месяце:', day_count)
+    else:
+        print('Месяца с таким номером не существует!')
 
