@@ -10,31 +10,40 @@
 # Использовать только операторы if/elif/else, можно вложенные
 
 envelop_x, envelop_y = 10, 7
-paper_x, paper_y = 8, 9
+paper_x, paper_y = 6, 8
 # проверить для
-# paper_x, paper_y = 9, 8
-# paper_x, paper_y = 6, 8
-# paper_x, paper_y = 8, 6
-# paper_x, paper_y = 3, 4
-# paper_x, paper_y = 11, 9
-# paper_x, paper_y = 9, 11
+# paper_x, paper_y = 9, 8 net
+# paper_x, paper_y = 6, 8 da
+# paper_x, paper_y = 8, 6 da
+# paper_x, paper_y = 3, 4 da
+# paper_x, paper_y = 11, 9 da
+# paper_x, paper_y = 9, 11 net
 # (просто раскоментировать нужную строку и проверить свой код)
 
 
 envelop_x, envelop_y = 10, 7
-paper_x, paper_y = 8, 9
+paper_x, paper_y = 11, 9
 
 if envelop_x >= paper_x: # сравниваем сторону конверта х с стороной листа х
     if envelop_y >= paper_y: #сравниваем сторону конверта у с стороной листа у
         print('Yes!')
     else:
-        if paper_y <= envelop_x:
-            if paper_x <= envelop_y:
+        if envelop_x >= paper_y:# сравниваем сторону конверта y с стороной листа х
+            if envelop_y >= paper_x:# сравниваем сторону конверта у с стороной листа x
                 print('Yes!')
             else:
                 print('Not')
         else:
             print('Not')
+else:# сравниваем в обратном порядке
+    if envelop_y >= paper_x:
+        if envelop_x >= paper_y:
+            print('Yes!')
+        else:
+            print('Not')
+    else:
+        print('Not')
+
 
 
 
