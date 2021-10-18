@@ -11,5 +11,20 @@
 
 educational_grant, expenses = 10000, 12000
 
-# TODO здесь ваш код
-123
+i = 0
+student_income = educational_grant
+months_expenses = 0
+money_needs = 0
+
+while i < 10:
+
+    if i == 0:
+        months_expenses = expenses
+    elif i >= 1:
+        months_expenses *= 1.03
+    i += 1
+    diference = round(months_expenses - student_income)
+    money_needs += diference
+    print('Расходы в', i, 'месяце:', diference, ', Итого за', i, 'мес.:', round(money_needs))
+
+print('Студенту надо попросить', money_needs, 'рублей')
