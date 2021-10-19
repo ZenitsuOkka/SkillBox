@@ -24,3 +24,4 @@ sd.sleep(3)
 # TODO здесь ваш код
 
 sd.pause()
+1
