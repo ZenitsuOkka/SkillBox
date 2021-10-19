@@ -60,3 +60,4 @@ for brick_y in range(brick_y_count):
     end_y += y
 
 sd.pause()
+1
