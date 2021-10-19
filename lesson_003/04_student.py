@@ -28,3 +28,4 @@ while i < 10:
     print('Расходы в', i, 'месяце:', diference, ', Итого за', i, 'мес.:', round(money_needs))
 
 print('Студенту надо попросить', money_needs, 'рублей')
+1
