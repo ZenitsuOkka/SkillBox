@@ -41,6 +41,12 @@ def draw_figure(start_point, side_count, angle, length):
             step += angle_step
         vector.draw()
 
+def draw_triangle(start_point, angle=0, length=100):
+    side = 3
+    draw_figure(start_point=start_point, side_count=side, angle=angle, length=length)
+
+
+
 
 
 # Часть 1-бис.
