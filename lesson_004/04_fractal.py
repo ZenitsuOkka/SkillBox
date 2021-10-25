@@ -49,7 +49,7 @@ draw_branches(point=root_point, angle=90, length=100)
 
 # можно поиграть -шрифтами- цветами и углами отклонения
 
-# TODO здесь ваш код
+
 
 # 4) Усложненное задание (делать по желанию)
 # - сделать рандомное отклонение угла ветвей в пределах 40% от 30-ти градусов
@@ -58,6 +58,33 @@ draw_branches(point=root_point, angle=90, length=100)
 
 # Пригодятся функции
 # sd.random_number()
+
+def draw_branches(point, angle, length=100):
+    if length < 10:
+        return
+
+    vector = sd.get_vector(start_point=point, angle=angle, length=length, width=2)
+    vector.draw()
+
+    next_point = vector.end_point
+
+    delta = 30
+    delta_deviation = delta * 0.4
+    delta += sd.random_number(-delta_deviation, delta_deviation)
+
+    length = length * 0.75
+    length_deviation = round(length * 0.2)
+    length += sd.random_number(0, length_deviation)
+
+    next_angle = round(angle + delta)
+    draw_branches(next_point, next_angle, length)
+
+    next_angle = round(angle - delta)
+    draw_branches(next_point, next_angle, length)
+
+
+root_point = sd.get_point(500, 30)
+draw_branches(point=root_point, angle=90, length=100)
 
 sd.pause()
 
