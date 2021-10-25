@@ -26,7 +26,20 @@ import simple_draw as sd
 # sd.get_vector()
 # sd.line()
 # Результат решения см lesson_004/results/exercise_01_shapes.jpg
-start
+def draw_figure(start_point, side_count, angle, length):
+    vector = start_point
+    angle_step = 360 / side_count
+    step = angle_step
+    for side in range(side_count):
+        if side == 0:
+            vector = sd.get_vector(start_point=vector, angle=angle, length=length+3)
+        elif side == side_count-1:
+            sd.line(vector.end_point, start_point)
+            break
+        else:
+            vector = sd.get_vector(start_point=vector.end_point, angle=angle + step, length=length)
+            step += angle_step
+        vector.draw()
 
 
 
