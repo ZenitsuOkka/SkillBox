@@ -51,6 +51,46 @@ colors = {1: ('RED', sd.COLOR_RED),
           5: ('CYAN', sd.COLOR_CYAN),
           6: ('BLUE', sd.COLOR_BLUE),
           7: ('PURPLE', sd.COLOR_PURPLE)}
+figures = {1: 'треугольник',
+           2: 'квадрат',
+           3: 'пятиугольник',
+           4: 'шестиугольник'}
+
+while True:
+
+    print('Возможные фигуры:')
+    for num, name in figures.items():
+        print('    ', num, ':', name.lower())
+
+    figure = input('Укажите номер фигуры: ')
+
+    if figure.isdigit() and int(figure) in figures:
+        figure = int(figure)
+
+        print('Возможные цвета:')
+        for num, name in colors.items():
+            print('    ', num, ':', name[0].lower())
+
+        color = input('Укажите номер цвета: ')
+
+        if color.isdigit() and int(color) in colors:
+
+            color = int(color)
+            point = sd.get_point(300, 300)
+            if figure == 1:
+                draw_triangle(start_point=point, angle=20, length=100, color=colors[color][1])
+            elif figure == 2:
+                draw_quadrate(start_point=point, angle=20, length=100, color=colors[color][1])
+            elif figure == 3:
+                draw_pentagon(start_point=point, angle=20, length=100, color=colors[color][1])
+            elif figure == 4:
+                draw_hexagon(start_point=point, angle=20, length=100, color=colors[color][1])
+
+            break
+        else:
+            print('\n    Ошибка!: Неверно указан номер фигуры.\n')
+    else:
+        print('\n    Ошибка!: Неверно указан номер фигуры.\n')
 
 
 sd.pause()
