@@ -45,6 +45,35 @@ def draw_triangle(start_point, angle=0, length=100):
     side = 3
     draw_figure(start_point=start_point, side_count=side, angle=angle, length=length)
 
+def draw_quadrate(start_point, angle=0, length=100):
+    side = 3
+    draw_figure(start_point=start_point, side_count=side, angle=angle, length=length)
+
+def draw_pentagon(start_point, angle=0, length=100):
+    side = 5
+    draw_figure(start_point=start_point, side_count=side, angle=angle, length=length)
+
+
+def draw_hexagon(start_point, angle=0, length=100):
+    side = 6
+    draw_figure(start_point=start_point, side_count=side, angle=angle, length=length)
+
+if __name__ == '__main__':
+    point = sd.get_point(400, 400)
+    draw_triangle(start_point=point, angle=20, length=100)
+
+    point = sd.get_point(100, 400)
+    draw_quadrate(start_point=point, angle=20, length=100)
+
+    point = sd.get_point(400, 100)
+    draw_pentagon(start_point=point, angle=20, length=100)
+
+    point = sd.get_point(100, 100)
+    draw_hexagon(start_point=point, angle=20, length=100)
+
+    sd.pause()
+
+
 
 
 
