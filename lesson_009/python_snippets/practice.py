@@ -19,10 +19,12 @@ file_name = 'voyna-i-mir.txt'
 
 stat = {}
 #stat = {'а': {'т': 500, 'х': 5, }, 'т':}
+analize_count = 4
 
-sequence = '   '
+sequence = '    '
 with open(file_name, 'r', encoding='cp1251') as file:
     for line in file:
+        line = line[:-1]
         #print(line)
         for char in line:
             if sequence in stat:
@@ -50,7 +52,8 @@ for sequence, char_stat in stat.items():
 N = 1000
 printed = 0
 
-sequence = '   '
+sequence = '    '
+spaces_printed = 0
 while printed < N:
     char_stat = stat_for_generate[sequence]
     total = totals[sequence]
@@ -61,5 +64,10 @@ while printed < N:
         if dice <= pos:
             break
     print(char, end='')
+    if char == ' ':
+        spaces_printed += 1
+        if spaces_printed >= 10:
+            print()
+            spaces_printed = 0
     printed += 1
     sequence = sequence[1:] + char
