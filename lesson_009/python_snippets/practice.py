@@ -34,3 +34,9 @@ with open(file_name, 'r', encoding='cp1251') as file:
             prev_char = char
 
 pprint(stat)
+
+totals = {}
+for prev_char, char_stat in stat.items():
+    totals[prev_char] = 0
+    for char, count, in char_stat.items():
+        totals[prev_char] += count
