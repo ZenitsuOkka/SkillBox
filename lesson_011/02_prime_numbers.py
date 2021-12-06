@@ -54,7 +54,6 @@ for number in prime_number_iterator:
 # Теперь нужно создать генератор, который выдает последовательность простых чисел до n
 # Распечатать все простые числа до 10000 в столбик
 
-
 def prime_numbers_generator(n):
     prime_numbers = []
     for number in range(2, n + 1):
@@ -65,8 +64,9 @@ def prime_numbers_generator(n):
             prime_numbers.append(number)
             yield number
 
+
 number_generator = prime_numbers_generator(n=10000)
-for number in prime_numbers_generator:
+for number in number_generator:
     print(number)
 
 
@@ -85,3 +85,22 @@ for number in prime_numbers_generator:
 # простых счастливых палиндромных чисел и так далее. Придумать не менее 2х способов.
 #
 # Подсказка: возможно, нужно будет добавить параметр в итератор/генератор.
+def lucky_prime_numbers_generator(n):
+
+    for number in prime_numbers_generator(n):
+        lucky_nmb_len = len(str(number))
+        cnt = (lucky_nmb_len-1) // 2 if lucky_nmb_len % 2 != 0 else lucky_nmb_len // 2
+
+        if cnt:
+            left_path, right_path = str(number)[:cnt], str(number)[-cnt:]
+
+            left_nmb_sum = sum([int(num) for num in left_path])
+            right_nmb_sum = sum([int(num) for num in right_path])
+
+            if left_nmb_sum == right_nmb_sum:
+                yield number, left_path, right_path
+
+
+number_generator = lucky_prime_numbers_generator(n=100000)
+for number, l_path, r_path in number_generator:
+    print(f'{number}')
